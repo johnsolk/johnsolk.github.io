@@ -1,0 +1,8 @@
+name: "Lisa K. Johnson"
+navbar:
+  title: "Lisa K. Johnson, Marine Nonmodel Bioinformatics"
+left:
+  - text: "Home"
+href: index.html
+- text: "About"
+href: about.html
