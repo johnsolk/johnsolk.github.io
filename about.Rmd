@@ -6,8 +6,3 @@ output: html_document
 ---
 
 Lisa Johnson is a PhD candidate in the Molecular, Cellular, and Integrative Physiology (MCIP) graduate group at UC Davis, co-advised by Dr. C. Titus Brown and Dr. Andrew Whitehead.
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
