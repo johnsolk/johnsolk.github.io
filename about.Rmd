@@ -1,8 +1,0 @@
----
-title: "about"
-author: "Lisa K. Johnson"
-date: "4/29/2018"
-output: html_document
----
-
-Lisa Johnson is a PhD candidate in the Molecular, Cellular, and Integrative Physiology (MCIP) graduate group at UC Davis, co-advised by Dr. C. Titus Brown and Dr. Andrew Whitehead.
