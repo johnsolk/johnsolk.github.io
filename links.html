@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Bioinformatics Learning</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -260,17 +260,96 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Bioinformatics Learning</h1>
 
 </div>
 
 
-<div id="links" class="section level1">
-<h1>Links</h1>
+<p><em>Why have you learned the programming languages R and Python and use Linux OS (Ubuntu) distributions?</em></p>
+<p>Working as an <a href="http://vosslab.weebly.com/lab-alumni.html">experimental wetlab and field biological technician</a>, I came to the realization around 2012 that we were accumulating a lot of data! Gene expression data for just one experiment can occupy tens to hundreds of thousands of rows of genes/isoforms by hundreds of columns of samples. Too much data to work in Excel and perform calculations by hand.</p>
+<p>Since then, I’ve devoted substantial time and effort towards learning Python and R and being comfortable working on the commandline in a Linux operating system or Mac to efficiently work with data sets of this size. I’ve become quite passionate about training others to do the same so that discoveries can be proportional to the data collected, since substantial investmetns are made in primary data generation. The <a href="https://carpentries.org/">software carpentry community</a> is a great way to get started! <a href="https://ljcohen.github.io/teaching.html">In 2017, I became certified as an instructor</a>.</p>
+<p><em>“What language should I learn?”</em></p>
+<p>Resources:</p>
 <ul>
-<li><a href="">Link 1</a></li>
-<li><a href="">Link 2</a></li>
+<li><a href="https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbx100/4096809">Dudley and Butte. 2009. A Quick Guide for Developing Effective Bioinformatics Programming Skills. Plos Computational Biology.</a></li>
+<li><a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002303">Shade and Teal. 2015. Computing Workflows for Biologists: A Roadmap. Plos Biology.</a></li>
+<li><a href="https://academic.oup.com/bib/advance-article/doi/10.1093/bib/bbx100/4096809">Attwood et al. 2017. A global perspective on evolving bioinformatics and data science training needs. Briefings in Bioinformatics</a></li>
 </ul>
+<p>I often hear this question. While there is benefit in learning how to code for the sake of building programming skills, we’re all busy. For students wanting to generally expand knowledge, Python and R both seem to be useful. For researchers who are pressed for time, language-learning should be project-driven. In my daily work, I use various software packages databases. Software packages serve diverse purposes, including sequence alignments, short read quantification, statistical analyses, bioinformatics database searching. Running these tools does not require knowledge of a programming language. I use the Python programming language to stitch together workflows, or “pipelines” as we call them so that the same pipeline can be run on multiple samples the same way. This ensures that samples are all treated equal and output is comparable. If more samples are added or a new software tool becomes available, programmable pipelines (not looping over all files in a directory) ensures efficient reproducibility of the work. If you’re working with <a href="https://t.co/R4BQfH2i1Y">large sets of samples or multiple species</a>, programming pipelines has been a valuable time saver for me after running pipelines several times.</p>
+<p>There tends to be a divide between software developers and the users. Principle Investigators with too much on their plate already can be easily persuaded to jump on a new software package bandwagon with the promise of saving time and efficiency. Being able to evaluate the output of running a software package is more valuable than spending time on programming. Is the output expected? Was there an error? What is really going on? Software developers are sometimes not as familiar with specific research applications than the users, who have generated the data and have a better first-hand knowledge of how the data were acquired. Communication between software developers and users is useful, and often necessary! Github is wonderful. If there are errors, it took me a long time to realize it is not the fault of the user. If the softare is open source and being developed on github, filing an issue is often very helpful for all parties to document a problem or question.</p>
+<p>In the long-term, with Moore’s Law applied to gene sequencing (see below), the amount of accumulated data is going to soon (if not already) exceed many biologists’ current capabilities to store and process data. Many articles and books have been written encouraging biologists to learn computing skills for bioinformatics. Why not spend time and effort now on acquiring better computer skills to gain better control over the rapidly-growing amount of information later?</p>
+<p>From <a href="http://www.oscer.ou.edu/education.php">Oklahoma University, “Supercomputing in Plain English” workshop series</a>:</p>
+<div class="figure">
+<img src="img/mooreslaw_genesequencing.jpg" />
+
 </div>
+<p>Links:</p>
+<p><a href="https://github.com/WhiteheadLab/Lab_Wiki/blob/master/bioinformatics_programming.md">Learning resources for undergraduates and graduate students</a></p>
+<p>Computing skills for bioinformatics can be broken down into three broad categories:</p>
+<ol style="list-style-type: decimal">
+<li>Linux shell</li>
+</ol>
+<p>This is referring to the command-line terminal. I use the free, open-source Ubuntu OS Linux distribution on my personal computer. Many NGS analyses take place on a networked computer cluster because of the computing power and storage required.</p>
+<ul>
+<li><a href="http://rik.smith-unna.com/command_line_bootcamp/" class="uri">http://rik.smith-unna.com/command_line_bootcamp/</a></li>
+<li><a href="http://ged.msu.edu/angus/tutorials/unix-and-ssh-and-scp.html" class="uri">http://ged.msu.edu/angus/tutorials/unix-and-ssh-and-scp.html</a></li>
+<li><a href="http://software-carpentry.org/v4/shell/index.html" class="uri">http://software-carpentry.org/v4/shell/index.html</a></li>
+<li><a href="http://www.oscer.ou.edu/education.php" class="uri">http://www.oscer.ou.edu/education.php</a></li>
+<li><a href="http://linuxcommand.org/" class="uri">http://linuxcommand.org/</a></li>
+<li><a href="http://ss64.com/bash/" class="uri">http://ss64.com/bash/</a></li>
+<li><a href="https://explainshell.com/" class="uri">https://explainshell.com/</a></li>
+<li><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY Download Page</a></li>
+<li><a href="https://mobaxterm.mobatek.net/">Mobaxterm</a></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><a href="https://www.python.org/">Python</a>, for filename parsing, pipeline</li>
+</ol>
+<ul>
+<li><a href="https://beta.stepic.org/Python-for-Beginners-5/" class="uri">https://beta.stepic.org/Python-for-Beginners-5/</a></li>
+<li><a href="http://www.codecademy.com/" class="uri">http://www.codecademy.com/</a></li>
+<li><a href="http://www.pythontutor.com/visualize.html#mode=edit">Online Python Tutor</a></li>
+<li>Python visualizer: <a href="http://cscircles.cemc.uwaterloo.ca/visualize/#" class="uri">http://cscircles.cemc.uwaterloo.ca/visualize/#</a></li>
+<li>Learn Python the Hard Way: <a href="http://learnpythonthehardway.org/book/intro.html" class="uri">http://learnpythonthehardway.org/book/intro.html</a></li>
+<li>Biopython is a project with an active association of developers: <a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html" class="uri">http://biopython.org/DIST/docs/tutorial/Tutorial.html</a> Follow the Biopython email discussion list: <a href="http://biopython.org/wiki/Mailing_lists" class="uri">http://biopython.org/wiki/Mailing_lists</a></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>R, for statistics</li>
+</ol>
+<ul>
+<li><a href="https://www.coursera.org/course/compdata" class="uri">https://www.coursera.org/course/compdata</a></li>
+<li><a href="http://www.bioconductor.org/">Bioconductor</a> is an extensive and highly-developed set of bio-specific class packages written in R: <a href="http://www.bioconductor.org/help/course-materials/2013/useR2013/Bioconductor-tutorial.pdf" class="uri">http://www.bioconductor.org/help/course-materials/2013/useR2013/Bioconductor-tutorial.pdf</a> Follow the active Bioconductor email discussion list: <a href="https://stat.ethz.ch/mailman/listinfo/bioconductor" class="uri">https://stat.ethz.ch/mailman/listinfo/bioconductor</a> General bioinformatics skills:</li>
+</ul>
+<p>General learning and problem-solving:</p>
+<ul>
+<li>Analysis in Next Generation Sequencing Data (ANGUS) course at UCD: <a href="http://angus.readthedocs.io/en/2017/" class="uri">http://angus.readthedocs.io/en/2017/</a></li>
+<li>Rosalind: <a href="http://rosalind.info/problems/locations/" class="uri">http://rosalind.info/problems/locations/</a></li>
+<li><a href="https://www.coursera.org/course/bioinformatics" class="uri">https://www.coursera.org/course/bioinformatics</a></li>
+<li><a href="http://www.ebi.ac.uk/training/online/course-list?topic" class="uri">http://www.ebi.ac.uk/training/online/course-list?topic</a>[]=11&amp;topic[]=13&amp;views_exposed_form_focused_field=edit-topic-13</li>
+<li><a href="https://www.msi.umn.edu/tutorial-materials" class="uri">https://www.msi.umn.edu/tutorial-materials</a></li>
+</ul>
+<p>Blogs:</p>
+<ul>
+<li>Dr. Titus Brown’s blog: <a href="http://ivory.idyll.org/blog/" class="uri">http://ivory.idyll.org/blog/</a></li>
+<li>Dr. Nick Loman’s blog: <a href="http://pathogenomics.bham.ac.uk/blog/" class="uri">http://pathogenomics.bham.ac.uk/blog/</a></li>
+<li>Dr. Ewan Birney’s blog: <a href="http://ewanbirney.com/" class="uri">http://ewanbirney.com/</a></li>
+<li><a href="https://genome.ucsc.edu/FAQ/FAQformat.html" class="uri">https://genome.ucsc.edu/FAQ/FAQformat.html</a></li>
+<li><a href="http://bcbio.wordpress.com/" class="uri">http://bcbio.wordpress.com/</a></li>
+<li><a href="http://followthedata.wordpress.com/" class="uri">http://followthedata.wordpress.com/</a></li>
+<li><a href="http://pythonicprose.blogspot.com/2009/09/python-split-paragraph-into-sentences.html" class="uri">http://pythonicprose.blogspot.com/2009/09/python-split-paragraph-into-sentences.html</a></li>
+<li><a href="https://blastedbio.blogspot.com/">Dr. Peter Cock’s blog</a></li>
+<li><a href="http://telliott99.blogspot.com/">Python for Bioinformatics</a></li>
+<li><a href="http://manuals.bioinformatics.ucr.edu/workshops" class="uri">http://manuals.bioinformatics.ucr.edu/workshops</a></li>
+<li><a href="http://manuals.bioinformatics.ucr.edu/home/ht-seq" class="uri">http://manuals.bioinformatics.ucr.edu/home/ht-seq</a></li>
+<li><a href="http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual" class="uri">http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual</a></li>
+<li><a href="http://telemedicina.med.muni.cz/genomic-proteomic-analysis/index-en.php?pg=home" class="uri">http://telemedicina.med.muni.cz/genomic-proteomic-analysis/index-en.php?pg=home</a></li>
+<li><a href="http://www.r-project.org/doc/bib/R-publications.html" class="uri">http://www.r-project.org/doc/bib/R-publications.html</a></li>
+<li><a href="http://seqanswers.com/forums/archive/index.php/t-7257.html" class="uri">http://seqanswers.com/forums/archive/index.php/t-7257.html</a></li>
+<li><a href="http://www.ats.ucla.edu/stat/r/" class="uri">http://www.ats.ucla.edu/stat/r/</a></li>
+<li>Computer Science 101 | Coursera</li>
+<li><a href="http://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools" class="uri">http://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools</a></li>
+<li>IBM Computational Genomics <a href="http://www.cabotpartners.com/Downloads/IBM_HPC_and_Storage_for_NGS_October_2011.pdf" class="uri">http://www.cabotpartners.com/Downloads/IBM_HPC_and_Storage_for_NGS_October_2011.pdf</a> Storage: <a href="http://www.slideshare.net/gcoates/storage-for-nextgeneration-sequencing" class="uri">http://www.slideshare.net/gcoates/storage-for-nextgeneration-sequencing</a></li>
+</ul>
+<p>Feel free to contact me if you have suggestions for learning resources to add!</p>
 
 <html>
 
