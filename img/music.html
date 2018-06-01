@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>music</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Lisa K. Johnson</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-info"></span>
+     
+    About
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-binoculars"></span>
+     
+    Research
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="current_projects.html">Current Projects</a>
+    </li>
+    <li>
+      <a href="past_projects.html">Previous Projects</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="publications.html">
+    <span class="fa fa-cube"></span>
+     
+    Publications
+  </a>
+</li>
+<li>
+  <a href="teaching.html">
+    <span class="fa fa-cogs"></span>
+     
+    Teaching
+  </a>
+</li>
+<li>
+  <a href="http://monsterbashseq.wordpress.com/">
+    <span class="fa fa-street-view"></span>
+     
+    Blog
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    More
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="links.html">Links</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="music.html">Music</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">music</h1>
+
+</div>
+
+
+<p>In my free time, I enjoy playing the cello. I have a minor in music (2002) from Eckerd College in St. Petersburg, FL, where I studied with Mussie Eidelman. I began studying cello at an early age with Dr. Judy Shiffers (Silver Spring, MD). I have also studied with Dr. Richard Thomas (UNC Wilmington) and Susan Lamb Cook (UC Davis).</p>
+<div id="recent-projects" class="section level3">
+<h3>Recent projects:</h3>
+<p>Leonard Bernstein: “Dream With Me”<br />
+Ashley West, mezzo-soprano<br />
+Lisa Johnson, cello<br />
+Jeremiah Trujillo, piano<br />
+<a href="https://youtu.be/bVCkQhFGqSw?t=36m6s"><img src="img/ucd_ashley_west.png" height="20%" width="20%"></a></p>
+<p>Trio in B-flat Major, op. 97 (“Archduke”) by Ludwig van Beethoven (1770−1827)<br />
+Calvin Proctor, violin<br />
+Lisa Johnson, cello<br />
+Alessandra Knitter, piano<br />
+Coached by Michael Orland<br />
+<!--![](img/ucd_trio.png)--> <a href="https://youtu.be/fb2WFSXmXeg?t=16m45s"><img src="img/ucd_trio.png" height="20%" width="20%"></a></p>
+</div>
+<div id="orchestras" class="section level3">
+<h3>Orchestras</h3>
+<p>UCD Symphony Orchestra<br />
+2017-2018</p>
+<p>Elgar, “Enigma Variations”<br />
+<a href="https://youtu.be/nMub87RHQDw"><img src="img/ucdso.png" height="20%" width="20%"></a></p>
+<p>UCD Barque Ensemble<br />
+2015</p>
+<p><a href="https://steinhardt.nyu.edu/music/ensembles/community_orchestra">NYU Community Orchestra</a>, New York<br />
+2014-2015</p>
+<p><a href="http://www.verobeachchamberorchestra.org/">Vero Beach Chamber Orchestra</a>, Florida<br />
+2010-2013<br />
+2012-2013, Pricipal<br />
+<img src="img/2013-03-03-20-57-47.jpg" height="20%" width="20%"></p>
+<p><a href="http://mcorchestra.org/">Melbourne Community Orchestra</a>, Florida<br />
+2007-2009<br />
+<a href="http://www.wilmingtonsymphony.org/">Wilmington Symphony</a>, North Carolina<br />
+2002-2004</p>
+<p><a href="http://www.tampabaysymphony.com/">Tampa Bay Symphony</a>, Florida<br />
+1998-2002</p>
+<p><a href="https://www.carnegiehall.org/Education/Young-Musicians/NYO-USA">National Youth Orchestra, Carnegie Hall</a>, New York<br />
+Johannes Brahms’ Symphony No. 1, conducted by Lukas Foss<br />
+January 20, 1998</p>
+<p><a href="http://www.washingtonpromusica.org/">Washington Pro Musica Ensembles</a>, Washington D.C. Metro area<br />
+1997-1998</p>
+<p><a href="https://mcyo.org/">Montgomery County Youth Orchestras</a>, Maryland<br />
+1993-1998</p>
+</div>
+<div id="non-classical-projects-and-collaborations" class="section level3">
+<h3>Non-classical Projects and Collaborations:</h3>
+<p>Audio recordings on <a href="https://freesound.org/people/flcellogrl/sounds/?page=2">freesound.org database</a> (CC BY 3.0)</p>
+<p>Beth Chesser, University of Brighton, UK<br />
+<a href="https://vimeo.com/96406189">recordings for film ‘ENSO’</a><br />
+2014</p>
+<p>The Band in Heaven, <a href="https://thebandinheaven.bandcamp.com/album/caught-in-a-summer-swell-decades-records">studio recordings for the album ‘Caught in a Summer Swell’</a><br />
+2012</p>
+<p>New Gravity<br />
+2008-2009<br />
+Featured in <a href="https://href.li/?http://www.brevardlive.com/index.php?module=uploads&amp;func=download&amp;fileId=88">Brevard Live, November 2008, 17(8)</a></p>
+<p>Brian Lotter<br />
+<a href="https://myspace.com/brianlotter/music/songs">Live and home recordings</a><br />
+2007</p>
+<p>Eckerd College World Music Improv Ensemble<br />
+2000-2002</p>
+<p>When All Else Fails<br />
+2000</p>
+<p><img src="img/huggingmumford.jpg" height="40%" width="40%"></p>
+</div>
+
+<html>
+
+<head>
+<title>footer</title>
+</head>
+
+<body>
+
+<p>Copyright &copy; 2018 Lisa K. Johnson</p>
+
+</body>
+</html>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
