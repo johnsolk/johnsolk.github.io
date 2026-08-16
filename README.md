@@ -22,9 +22,9 @@ no JS framework, no bundler). It can be served as-is by GitHub Pages.
 2. **Remove the old site contents** (this replaces the previous Pandoc-generated site,
    including the old `about.html`, `blog/` index if it's not being kept, and any old
    `files/` contents that aren't still referenced).
-   - Keep `blog/` as-is if the Jekyll/blog subfolder should stay — the nav's
-     "The Fiddle" link points to `https://johnsolk.github.io/blog/`, so that path
-     needs to keep working.
+   - Keep `blog/` and `fiddle/` as-is if those subfolders should stay — the nav
+     links to `https://johnsolk.github.io/blog/` and `https://johnsolk.github.io/fiddle/`,
+     so both paths need to keep working.
 3. Copy `index.html`, `publications.html`, and the `files/` folder from this package
    into the repo root, replacing anything with the same names.
 4. Commit and push to the branch GitHub Pages serves from (usually `main` for a
