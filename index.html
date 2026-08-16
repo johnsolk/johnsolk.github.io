@@ -1,281 +1,505 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lisa K. Johnson, Ph.D.</title>
+<meta name="description" content="Lisa K. Johnson, Ph.D. Connecting biology, computing, and the people who use them.">
 
-<meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<style>
+  :root{
+    --ink:#10262A;
+    --ink-70: rgba(16,38,42,.72);
+    --ink-50: rgba(16,38,42,.52);
+    --paper:#F2EEE1;
+    --paper-dim:#EAE4D2;
+    --kelp:#2F5D50;
+    --kelp-deep:#1C3A32;
+    --rust:#C1552C;
+    --gold:#C9A227;
+    --line: rgba(16,38,42,.14);
+    --max: 780px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
 
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  }
 
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
 
-<title>Comparative Bioinformatics</title>
+  a{ color:inherit; }
+  ::selection{ background:var(--gold); color:var(--ink); }
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--rust);
+    outline-offset:3px;
+    border-radius:2px;
+  }
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
+  .wrap{
+    max-width: var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:rgba(242,238,225,.88);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: var(--max);
+    margin:0 auto;
+    padding:16px 28px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap: 16px;
+  }
+  .nav-name{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.04em;
+    text-decoration:none;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .nav-links{
+    display:flex; flex-wrap:wrap; gap:10px 22px;
+    list-style:none; margin:0; padding:0;
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:.03em;
+    justify-content:flex-end;
+  }
+  .nav-links li{ margin-left:22px; }
+  .nav-links li:first-child{ margin-left:0; }
+  .nav-links a{
+    text-decoration:none;
+    color: var(--ink-70);
+    padding-bottom:2px;
+    border-bottom:1px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover{ color:var(--rust); border-color:var(--rust); }
+
+  /* ---------- CONTOUR / SIGNATURE GRAPHIC ---------- */
+  .contours{
+    display:block; width:100%; height:auto;
+  }
+  .contours path{
+    fill:none;
+    stroke:var(--kelp);
+    stroke-width:1;
+    opacity:.55;
+  }
+  .contours path:nth-child(1){ opacity:.85; stroke-width:1.3; }
+  .contours path:nth-child(3){ opacity:.4; }
+  .contours path:nth-child(5){ opacity:.25; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 40px;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--kelp);
+    margin:0 0 18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px; background:var(--kelp);
+    display:inline-block;
+  }
+  h1.name{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+  .role{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+    color:var(--kelp-deep);
+    margin:0 0 22px;
+    max-width: 46ch;
+  }
+  .lede{
+    max-width:56ch;
+    color:var(--ink-70);
+    font-size:16.5px;
+    margin:0 0 30px;
+  }
+  .hero-actions{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin-bottom: 46px;
+  }
+  .btn{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.02em;
+    text-decoration:none;
+    padding:11px 18px;
+    border-radius:3px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn.primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn.primary:hover{ background:var(--kelp-deep); border-color:var(--kelp-deep); }
+  .btn:not(.primary):hover{ background:var(--ink); color:var(--paper); }
+
+  .contours-hero{ margin-top: 6px; }
+
+  /* ---------- RULER DIVIDER (genome-track / depth-line motif) ---------- */
+  .ruler{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin: 64px 0 40px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.08em;
+    color: var(--ink-50);
+    text-transform:uppercase;
+    user-select:none;
+  }
+  .ruler .line{
+    flex:1;
+    height:1px;
+    background: repeating-linear-gradient(
+      to right,
+      var(--ink-50) 0, var(--ink-50) 1px,
+      transparent 1px, transparent 8px
+    );
+    opacity:.6;
+  }
+
+  section{ padding-top: 6px; }
+
+  h2.section-title{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size: clamp(1.6rem, 3.4vw, 2.05rem);
+    letter-spacing:-.005em;
+    margin: 0 0 22px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .about p{ margin:0 0 16px; color:var(--ink-70); max-width: 62ch; }
+  .about p strong{ color:var(--ink); font-weight:600; }
+  .about a{ color:var(--kelp-deep); text-decoration-color: rgba(47,93,80,.4); }
+  .about a:hover{ color:var(--rust); text-decoration-color: var(--rust); }
+
+  .stat-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 28px;
+    margin: 28px 0 8px;
+    padding: 22px 0 0;
+    border-top:1px solid var(--line);
+  }
+  .stat{ min-width:120px; }
+  .stat .num{
+    font-family:var(--serif);
+    font-size:1.7rem;
+    font-weight:600;
+    color:var(--kelp-deep);
+    display:block;
+  }
+  .stat .label{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--ink-50);
+  }
+
+  /* ---------- PUBLICATIONS: specimen-label cards ---------- */
+  .pub-list{ display:flex; flex-direction:column; gap:0; }
+  .pub{
+    display:grid;
+    grid-template-columns: 68px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .pub:last-child{ border-bottom:1px solid var(--line); }
+  .pub .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--kelp);
+    letter-spacing:.03em;
+    padding-top:3px;
+  }
+  .pub h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.06rem;
+    margin:0 0 6px;
+    line-height:1.35;
+    color:var(--ink);
+  }
+  .pub .venue{
+    font-size:14px;
+    color:var(--ink-50);
+    margin: 0 0 8px;
+  }
+  .pub .venue em{ color:var(--ink-70); }
+  .pub .badge{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:2px 7px;
+    border-radius:2px;
+    margin-right:8px;
+  }
+  .pub .link{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-decoration:none;
+    color:var(--kelp-deep);
+    border-bottom:1px solid rgba(47,93,80,.35);
+  }
+  .pub .link:hover{ color:var(--rust); border-color:var(--rust); }
+
+  .more-pubs{
+    margin-top:24px;
+    font-family:var(--mono);
+    font-size:13px;
+  }
+  .more-pubs a{ color:var(--rust); text-decoration:none; border-bottom:1px solid var(--rust); }
+
+  /* ---------- FIELD NOTES / PERSONAL ---------- */
+  .notes-card{
+    background:var(--kelp-deep);
+    color:var(--paper);
+    border-radius:6px;
+    padding: 34px 30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .notes-card::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(115deg, rgba(242,238,225,.05) 0px, rgba(242,238,225,.05) 1px, transparent 1px, transparent 34px);
+    pointer-events:none;
+  }
+  .notes-card h2{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size:1.5rem;
+    margin:0 0 12px;
+    position:relative;
+  }
+  .notes-card--minimal h2{ margin-bottom:20px; }
+  .notes-card--minimal{ padding: 30px 30px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+  .notes-card--minimal h2{ margin-bottom:0; }
+  .notes-card p{
+    color: rgba(242,238,225,.82);
+    max-width:56ch;
+    margin:0 0 20px;
+    position:relative;
+  }
+  .notes-card .btn{
+    border-color: var(--paper);
+    color:var(--paper);
+    position:relative;
+  }
+  .notes-card .btn:hover{ background:var(--paper); color:var(--kelp-deep); }
+
+  /* ---------- CONNECT ---------- */
+  .connect-list{
+    list-style:none; margin:0; padding:0;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+  }
+  .connect-list a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-decoration:none;
+    padding:14px 0;
+    border-top:1px solid var(--line);
+    color:var(--ink);
+    font-family:var(--mono);
+    font-size:14px;
+  }
+  .connect-list a .go{
+    color:var(--ink-50);
+    transition: transform .15s ease, color .15s ease;
+  }
+  .connect-list a:hover .go{ transform: translateX(3px); color:var(--rust); }
+  .connect-list a:hover{ color:var(--rust); }
+
+  footer{
+    margin-top: 70px;
+    padding: 30px 0 60px;
+    border-top:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-50);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  @media (max-width: 620px){
+    .pub{ grid-template-columns: 1fr; gap:6px; }
+    .connect-list{ grid-template-columns: 1fr; }
+    .hero{ padding-top:44px; }
+  }
+
+  @media (max-width: 520px){
+    .nav-inner{ flex-direction:column; align-items:flex-start; gap:10px; padding:14px 20px; }
+    .nav-links{ justify-content:flex-start; gap:8px 16px; font-size:12px; }
+    .nav-links li{ margin-left:16px; }
+    .wrap{ padding:0 20px; }
   }
 </style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
-
-
 </head>
-
 <body>
 
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-</style>
+<header class="site">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">LISA K. JOHNSON</a>
+    <ul class="nav-links">
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="https://johnsolk.github.io/blog/">The Fiddle</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </div>
+</header>
 
+<main class="wrap" id="top">
 
-<style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-</style>
-
-<script>
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark it active
-  menuAnchor.parent().addClass('active');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
-});
-</script>
-
-
-<div class="container-fluid main-container">
-
-<!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
-
-<!-- code folding -->
-
-
-
-
-
-
-<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Lisa K. Johnson</a>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <h1 class="name">Lisa K. Johnson, Ph.D.</h1>
+    <p class="role">Connecting biology, computing, and the people who use them.</p>
+    <p class="lede">
+      My work sits at the intersection of biology, genomic technologies, and computing, where I
+      help researchers learn to navigate complex data and computational tools.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="mailto:johnsolk@gmail.com">Get in touch</a>
+      <a class="btn" href="files/Johnson_CV_2026.pdf">CV</a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="index.html">
-    <span class="fa fa-home"></span>
-     
-    Home
-  </a>
-</li>
-<li>
-  <a href="about.html">
-    <span class="fa fa-info"></span>
-     
-    About
-  </a>
-</li>
-<li>
-  <a href="publications.html">
-    <span class="fa fa-cube"></span>
-     
-    Publications
-  </a>
-</li>
-<li>
-  <a href="https://johnsolk.github.io/blog/">
-    <span class="fa fa-street-view"></span>
-     
-    Blog
-  </a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+    <!-- signature contour graphic: depth lines / genome track hybrid -->
+    <svg class="contours contours-hero" viewBox="0 0 780 140" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,90 C120,50 180,120 300,80 C420,40 480,110 600,70 C660,50 720,90 780,60"/>
+      <path d="M0,105 C130,70 190,130 310,100 C430,65 490,120 610,90 C670,72 725,100 780,80"/>
+      <path d="M0,118 C140,95 200,135 320,118 C440,90 500,128 620,108 C680,94 730,112 780,98"/>
+      <path d="M0,128 C150,112 210,140 330,130 C450,108 510,136 630,122 C685,112 735,124 780,114"/>
+      <path d="M0,135 C160,124 215,145 335,138 C455,120 515,140 635,132 C688,124 738,134 780,127"/>
+    </svg>
+  </section>
 
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="about" style="margin-top:56px;">
+    <h2 class="section-title">About</h2>
+    <div class="about-grid">
+      <p>
+        I am a <strong>Senior Scientist in Applied Bioinformatics at 10x Genomics</strong>, where I provide
+        <a href="https://www.10xgenomics.com/support">bioinformatics software support</a> for researchers
+        analyzing data generated by single-cell and spatial technologies.
+      </p>
+      <p>
+        I earned my Ph.D. in Molecular, Cellular, and Integrative Physiology, with a designated emphasis in
+        Biotechnology, from <a href="http://mcip.ucdavis.edu/">UC Davis</a> in 2019, co-advised by
+        <a href="http://ivory.idyll.org/lab/index.html">Dr. C. Titus Brown</a> and
+        <a href="https://whiteheadresearch.wordpress.com/">Dr. Andrew Whitehead</a>. My doctoral work focused on
+        developing and standardizing bioinformatics workflows for large datasets from multiple non-traditional
+        model species. Along the way,
+        I became particularly interested in <strong>teaching biologists the bioinformatics and data science
+        skills</strong> they needed to conduct their research.
+      </p>
+      <p>
+        Before UC Davis, I worked as a bioinformatics programmer at NYU Langone's Genome Technology Center.
+        Earlier in my career, I spent several years in marine field ecology, including four years at HBOI-FAU
+        with the Robertson Coral Reef Program studying coral and zooxanthellae gene expression, shoreline
+        mangrove restoration, and two years in the
+        <a href="http://www.peacecorps.gov/learn/wherepc/pacificislands/micronesiaandpalau/">Peace Corps</a>
+        working on coral ecosystems in Micronesia.
+      </p>
+      <p>
+        I hold a B.S. in Biochemistry with a minor in Music from
+        <a href="https://www.eckerd.edu/chemistry/">Eckerd College</a>, an M.S. in Biology
+        from UNC Wilmington, advised by
+        <a href="https://www.uncw.edu/profiles/k/kinseys">Steve Kinsey</a>, and an M.S. in Environmental Resource
+        Management from <a href="https://www.fit.edu/programs/environmental-resource-management-ms/">Florida Institute of Technology</a>,
+        completed while working at the
+        <a href="https://floridaaquaticpreserves.org/managed-areas/aquatic-preserves/indian-river-vero-beach-fort-pierce-aquatic-preserve#area-information">FL DEP Indian River Lagoon Aquatic
+        Preserve</a>.
+      </p>
+    </div>
+  </section>
 
+  <!-- ================= CONNECT ================= -->
+  <section id="connect" style="margin-top:56px;">
+    <h2 class="section-title">Connect</h2>
+    <ul class="connect-list">
+      <li><a href="https://github.com/johnsolk"><span>GitHub</span><span class="go">↗</span></a></li>
+      <li><a href="https://orcid.org/0000-0002-3600-7218"><span>ORCID · 0000-0002-3600-7218</span><span class="go">↗</span></a></li>
+      <li><a href="https://scholar.google.com/citations?user=o556TggAAAAJ&hl=en"><span>Google Scholar</span><span class="go">↗</span></a></li>
+      <li><a href="mailto:johnsolk@gmail.com"><span>Email</span><span class="go">↗</span></a></li>
+    </ul>
+  </section>
 
-<h1 class="title toc-ignore">Comparative Bioinformatics</h1>
+</main>
 
-</div>
-
-
-<div class="figure">
-<img src="img/SanomaCoast_bg.jpg" />
-
-</div>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118351474-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-118351474-1');
-</script>
-
-<html>
-
-<head>
-<title>footer</title>
-</head>
-
-<body>
-
-<p>Copyright &copy; 2026 Lisa K. Johnson</p>
-
-</body>
-</html>
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+<footer class="wrap">
+  <span>Copyright © 2026 Lisa K. Johnson</span>
+  <span>Sacramento & Pleasanton, CA</span>
+</footer>
 
 </body>
 </html>

@@ -1,370 +1,601 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications — Lisa K. Johnson</title>
+<meta name="description" content="Peer-reviewed papers, a book chapter, and conference presentations by Lisa K. Johnson.">
 
-<meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<style>
+  :root{
+    --ink:#10262A;
+    --ink-70: rgba(16,38,42,.72);
+    --ink-50: rgba(16,38,42,.52);
+    --paper:#F2EEE1;
+    --paper-dim:#EAE4D2;
+    --kelp:#2F5D50;
+    --kelp-deep:#1C3A32;
+    --rust:#C1552C;
+    --gold:#C9A227;
+    --line: rgba(16,38,42,.14);
+    --max: 780px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
 
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  }
 
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
 
-<title>Publications</title>
+  a{ color:inherit; }
+  ::selection{ background:var(--gold); color:var(--ink); }
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--rust);
+    outline-offset:3px;
+    border-radius:2px;
+  }
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
+  .wrap{
+    max-width: var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:rgba(242,238,225,.88);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: var(--max);
+    margin:0 auto;
+    padding:16px 28px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap: 16px;
+  }
+  .nav-name{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.04em;
+    text-decoration:none;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .nav-links{
+    display:flex; flex-wrap:wrap; gap:10px 22px;
+    list-style:none; margin:0; padding:0;
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:.03em;
+    justify-content:flex-end;
+  }
+  .nav-links li{ margin-left:22px; }
+  .nav-links li:first-child{ margin-left:0; }
+  .nav-links a{
+    text-decoration:none;
+    color: var(--ink-70);
+    padding-bottom:2px;
+    border-bottom:1px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover, .nav-links a.current{ color:var(--rust); border-color:var(--rust); }
+
+  /* ---------- CONTOUR GRAPHIC ---------- */
+  .contours{ display:block; width:100%; height:auto; }
+  .contours path{ fill:none; stroke:var(--kelp); stroke-width:1; opacity:.55; }
+  .contours path:nth-child(1){ opacity:.85; stroke-width:1.3; }
+  .contours path:nth-child(3){ opacity:.4; }
+  .contours path:nth-child(5){ opacity:.25; }
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-head{ padding:56px 0 8px; }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--kelp);
+    margin:0 0 18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--kelp); display:inline-block; }
+  h1.page-title{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size: clamp(2.1rem, 5vw, 2.9rem);
+    line-height:1.06;
+    letter-spacing:-.01em;
+    margin:0 0 14px;
+  }
+  .page-lede{
+    max-width:56ch;
+    color:var(--ink-70);
+    font-size:16.5px;
+    margin:0 0 8px;
+  }
+  .external-links{
+    display:flex; gap:18px; flex-wrap:wrap;
+    margin: 22px 0 6px;
+    font-family:var(--mono);
+    font-size:13px;
+  }
+  .external-links a{ margin-right:18px; }
+  .external-links a:last-child{ margin-right:0; }
+  .external-links a{
+    text-decoration:none;
+    color:var(--kelp-deep);
+    border-bottom:1px solid rgba(47,93,80,.35);
+  }
+  .external-links a:hover{ color:var(--rust); border-color:var(--rust); }
+
+  /* ---------- RULER DIVIDER ---------- */
+  .ruler{
+    display:flex; align-items:center; gap:14px;
+    margin: 50px 0 32px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.08em;
+    color: var(--ink-50);
+    text-transform:uppercase;
+    user-select:none;
+  }
+  .ruler .line{
+    flex:1; height:1px;
+    background: repeating-linear-gradient(to right, var(--ink-50) 0, var(--ink-50) 1px, transparent 1px, transparent 8px);
+    opacity:.6;
+  }
+
+  section{ padding-top: 6px; }
+
+  h2.section-title{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size: clamp(1.4rem, 3vw, 1.7rem);
+    letter-spacing:-.005em;
+    margin: 0 0 6px;
+  }
+  .section-count{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-50);
+    margin: 0 0 22px;
+  }
+
+  /* ---------- SPECIMEN-LABEL PUB CARDS ---------- */
+  .pub-list{ display:flex; flex-direction:column; }
+  .pub{
+    display:grid;
+    grid-template-columns: 68px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .pub-list + .pub-list .pub:first-child,
+  .pub:last-child{ border-bottom:1px solid var(--line); }
+  .pub .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--kelp);
+    letter-spacing:.03em;
+    padding-top:3px;
+  }
+  .pub h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.04rem;
+    margin:0 0 6px;
+    line-height:1.35;
+    color:var(--ink);
+  }
+  .pub .venue{ font-size:14px; color:var(--ink-50); margin: 0 0 8px; }
+  .pub .venue em{ color:var(--ink-70); }
+  .pub .venue strong{ color:var(--ink); font-weight:600; }
+  .pub .badge{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:2px 7px;
+    border-radius:2px;
+    margin: 4px 8px 0 0;
+  }
+  .pub .link{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-decoration:none;
+    color:var(--kelp-deep);
+    border-bottom:1px solid rgba(47,93,80,.35);
+    margin-right:16px;
+  }
+  .pub .link:hover{ color:var(--rust); border-color:var(--rust); }
+  .pub .badges{ margin-top:4px; }
+
+  /* Presentations: lighter-weight rows, no big specimen tag */
+  .talk-list{ display:flex; flex-direction:column; }
+  .talk{
+    display:grid;
+    grid-template-columns: 68px 1fr;
+    gap: 18px;
+    padding: 16px 0;
+    border-top:1px solid var(--line);
+    align-items:baseline;
+  }
+  .talk:last-child{ border-bottom:1px solid var(--line); }
+  .talk .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--kelp);
+  }
+  .talk p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--ink-70);
+    line-height:1.5;
+  }
+  .talk p strong{ color:var(--ink); font-weight:600; }
+  .talk .link{
+    font-family:var(--mono);
+    font-size:12px;
+    text-decoration:none;
+    color:var(--kelp-deep);
+    border-bottom:1px solid rgba(47,93,80,.35);
+    white-space:nowrap;
+  }
+  .talk .link:hover{ color:var(--rust); border-color:var(--rust); }
+  .talk .badge{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:1px 6px;
+    border-radius:2px;
+    margin-left:8px;
+  }
+
+  footer{
+    margin-top: 70px;
+    padding: 30px 0 60px;
+    border-top:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-50);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  @media (max-width: 620px){
+    .pub{ grid-template-columns: 1fr; gap:6px; }
+    .talk{ grid-template-columns: 1fr; gap:4px; }
+  }
+
+  @media (max-width: 520px){
+    .nav-inner{ flex-direction:column; align-items:flex-start; gap:10px; padding:14px 20px; }
+    .nav-links{ justify-content:flex-start; gap:8px 16px; font-size:12px; }
+    .nav-links li{ margin-left:16px; }
+    .wrap{ padding:0 20px; }
   }
 </style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
-
-
 </head>
-
 <body>
 
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-</style>
+<header class="site">
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">LISA K. JOHNSON</a>
+    <ul class="nav-links">
+      <li><a href="publications.html" class="current">Publications</a></li>
+      <li><a href="index.html#notes">The Fiddle</a></li>
+      <li><a href="index.html#connect">Connect</a></li>
+    </ul>
+  </div>
+</header>
 
+<main class="wrap" id="top">
 
-<style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-</style>
-
-<script>
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark it active
-  menuAnchor.parent().addClass('active');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
-});
-</script>
-
-
-<div class="container-fluid main-container">
-
-<!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
-
-<!-- code folding -->
-
-
-
-
-
-
-<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Lisa K. Johnson</a>
+  <!-- ================= PAGE HEAD ================= -->
+  <section class="page-head">
+    <h1 class="page-title">Publications</h1>
+    <div class="external-links">
+      <a href="https://scholar.google.com/citations?user=o556TggAAAAJ&hl=en">Google Scholar →</a>
+      <a href="https://orcid.org/0000-0002-3600-7218">ORCID · 0000-0002-3600-7218 →</a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="index.html">
-    <span class="fa fa-home"></span>
-     
-    Home
-  </a>
-</li>
-<li>
-  <a href="about.html">
-    <span class="fa fa-info"></span>
-     
-    About
-  </a>
-</li>
-<li>
-  <a href="publications.html">
-    <span class="fa fa-cube"></span>
-     
-    Publications
-  </a>
-</li>
-<li>
-  <a href="https://johnsolk.github.io/blog/">
-    <span class="fa fa-street-view"></span>
-    
-    Blog
-  </a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+    <svg class="contours" viewBox="0 0 780 90" preserveAspectRatio="none" aria-hidden="true" style="margin-top:36px;">
+      <path d="M0,55 C120,30 180,75 300,50 C420,25 480,70 600,44 C660,30 720,55 780,38"/>
+      <path d="M0,64 C130,44 190,80 310,62 C430,40 490,74 610,56 C670,45 725,62 780,50"/>
+      <path d="M0,72 C140,58 200,82 320,72 C440,55 500,78 620,66 C680,58 730,68 780,60"/>
+      <path d="M0,79 C150,68 210,86 330,80 C450,66 510,82 630,74 C685,68 735,74 780,70"/>
+      <path d="M0,84 C160,76 215,88 335,84 C455,73 515,84 635,80 C688,76 738,80 780,78"/>
+    </svg>
+  </section>
 
+  <!-- ================= JOURNAL ARTICLES ================= -->
+  <section id="articles" style="margin-top:56px;">
+    <h2 class="section-title">Journal articles</h2>
+    <p class="section-count">12 peer-reviewed publications</p>
 
+    <div class="pub-list">
 
-<h1 class="title toc-ignore">Publications</h1>
+      <div class="pub">
+        <div class="tag">2021</div>
+        <div>
+          <h3>Draft Genome Sequence of the Free-Living, Iridescent Bacterium <em>Tenacibaculum mesophilum</em> Strain ECR</h3>
+          <p class="venue"><em>Microbiology Resource Announcements</em>, 10(1): e01302-20 — Mickol RL, Louyakis AS, Kee HL, <strong>Johnson LK</strong>, Dawson SC, Hargreaves KR, Chadwick GL, Newman DK, Leadbetter JR, Brown CT.</p>
+          <a class="link" href="https://doi.org/10.1128/mra.01302-20">Read the paper →</a>
+        </div>
+      </div>
 
-</div>
+      <div class="pub">
+        <div class="tag">2020</div>
+        <div>
+          <h3>Tximeta: Reference sequence checksums for provenance identification in RNA-seq</h3>
+          <p class="venue"><em>PLOS Computational Biology</em>, 16(2): e1007664 — Love MI, Soneson C, Hickey PF, <strong>Johnson LK</strong>, Pierce NT, Shepherd L, Morgan M, Patro R.</p>
+          <a class="link" href="https://doi.org/10.1371/journal.pcbi.1007664">Read the paper →</a>
+        </div>
+      </div>
 
+      <div class="pub">
+        <div class="tag">2020</div>
+        <div>
+          <h3>Draft genome assemblies for four species of North American killifish (<em>Fundulus</em>)</h3>
+          <p class="venue"><em>GigaScience</em>, 9(6): giaa067 — <strong>Johnson LK</strong>, Sahasrabudhe R, Gill T, Roach J, Froenicke L, Brown CT, Whitehead A.</p>
+          <a class="link" href="https://doi.org/10.1093/gigascience/giaa067">Read the paper →</a>
+        </div>
+      </div>
 
-<p><a href="https://scholar.google.com/citations?user=o556TggAAAAJ&amp;hl=en">Google scholar</a></p>
-<p><a href="https://orcid.org/0000-0002-3600-7218">ORCID</a></p>
-<ol reversed>
-<li>
-  <strong>Johnson LK</strong>, Sahasrabudhe R, Gill T, Roach J, Froenicke L, Brown CT, Whitehead A. <em>In Review</em>. Draft genome assemblies using sequencing reads from Oxford Nanopore Technologies and Illumina platforms for four species of North American killifish from the Fundulus genus. <a href="https://doi.org/10.1101/686246">biorxiv, Posted June 28, 2019.</a>
-  </li>
-<li>
-Love MI, Soneson C, Hickey PF, <strong>Johnson LK</strong>, Pierce NT, Shepherd L, Morgan M, Patro R. 2020. Tximeta: Reference sequence checksums for provenance identification in RNA-seq. <a href="https://doi.org/10.1371/journal.pcbi.1007664">PloS Computational Biology. 16(2): e1007664.</a>
-</li>
-<li>
-Alexander H, <strong>Johnson LK</strong>, Brown CT. 2018. Keeping it light: (Re)analyzing community-wide datasets without major infrastructure. <a href="https://doi.org/10.1093/gigascience/giy159"><em>GigaScience</em>, 8(2): giy159.</a>
-  </li>
-  <li>
-<strong>Johnson LK</strong>, Alexander H, Brown CT. 2018. Re-assembly, quality evaluation, and annotation of 678 microbial eukaryotic reference transcriptomes. <a href="https://doi.org/10.1093/gigascience/giy158"><em>GigaScience</em>, 8(4): giy158.</a> <a href="http://gigasciencejournal.com/blog/microbial-genomics-goldmine/">GigaScience Prize Track Winner</a>, <a href="http://gigasciencejournal.com/blog/icg-prize-winner-lisa-johnson-qa/">Q&A Article</a>
-</li>
-<li>
-Daniel Standage, Ali Aliyari, <strong>Lisa J Cohen</strong>, Michael R Crusoe, Tim Head, Luiz Irber, Shannon EK Joslin, N B Kingsley, Kevin D Murray, Russell Neches, Camille Scott, Ryan Shean, Sascha Steinbiss, Cait Sydney, C Titus Brown. 2017. khmer release v2.1: software for biological sequence analysis. 2017. <a href="http://joss.theoj.org/papers/14540a3b572265f63247f7d8982ea6e2"><em>Journal of Open Source Software</em>, 2(15), 272, doi:10.21105/joss.00272</a>
-</li>
-<li>
-Hanley O, Zewdu R, <strong>Cohen L</strong>, Jung H, Lacombe J, Lee D, Philippidou P, Selleri L, Dasen J. 2016. Parallel Pbx-Dependent Pathways Govern the Coalescence and Fate of Motor Columns. <a href="https://www.cell.com/neuron/fulltext/S0896-6273(16)30459-7"><em>Neuron</em>, 91(5):1005-1020</a>.
-</li>
-<li>
-Cartularo L, Kluz T, <strong>Cohen L</strong>, Shen SS, Costa M. 2016. Molecular Mechanisms of Malignant Transformation by Low Dose Cadmium in Normal Human Bronchial Epithelial Cells. <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155002"><em>PloS One</em>, 11(5), e0155002</a>.
-</li>
-<li>
-Maass K, Shekar A, Lu J, Kang G, See F, Kim E, Delgado C, Shen S, <strong>Cohen L</strong>, Fishman G. 2015. Isolation and Characterization of ESC-Derived Cardiac Purkinje Cells. <a href="http://onlinelibrary.wiley.com/doi/10.1002/stem.1921/abstract"><em>Stem Cells</em>, doi: 10.1002/stem.1921</a>.
-</li>
-<li>
-Montenegro D, Kalpana K, Chrissian C, Sharma A, Takaoka A, Iacovidou, M, Soll C, Aminova O, Heguy A, <strong>Cohen L</strong>, Shen S, Kawamura A. 2015. Uncovering “herbal probiotics” in Juzen-taiho-to, an immune-boosting herbal formulation. <a href="http://www.sciencedirect.com/science/article/pii/S0960894X14013444"><em>Bioorganic &amp; Medicinal Chemistry Letters</em>, doi:10.1016/j.bmcl.2014.12.036</a>.
-</li>
-<li>
-<strong>Johnson LK</strong>, Dillaman RM, Gay DM, Blum JE, Kinsey ST. 2004. Metabolic influences of fiber size in aerobic and anaerobic locomotor muscles of the blue crab, <em>Callinectes sapidus</em>. <a href="http://jeb.biologists.org/content/207/23/4045.long"><em>Journal of Experimental Biology</em>, 207:4045-4056</a>.
-</li>
-<li>
-Gavrilova O, Haluzik M, Matsusue K, Cutson JJ, <strong>Johnson L</strong>, Dietz KR, Nicol CJ, Vinson C, Gonzalez FJ, Reitman ML. 2003. Liver peroxisome proliferator-activated receptor-gamma contributes to hepatic steatosis, triglyceride clearance, and regulation of body fat mass. <a href="http://www.jbc.org/content/278/36/34268.long"><em>Journal of Biological Chemistry</em>, 278(36):34268-34276</a>.
-</li>
-</ol>
-<div id="book-chapter" class="section level1">
-<h1>Book Chapter</h1>
-<p><strong>Cohen L</strong>, Efstathiadis E, Shen S. 2015. Chapter 9: <em>De novo</em> Transriptome Assembly. In: <em>Next Generation DNA Sequencing Informatics, 2nd Edition</em>. Ed. Stuart Brown. Cold Spring Harbor Laboratory Press, Cold Spring Harbor, NY.</p>
-</div>
-<div id="presentations" class="section level1">
-<h1>Presentations</h1>
-<ol reversed>
-<li>
-<strong>Johnson LK</strong>, Brennan R, Brown CT, Whitehead J. 2018. <em>De novo</em> transcriptome assemblies and transcriptional profiling of 16 Fundulus killifish species in response to environmental challenge. Society of Environmental Toxicology And Chemistry, North America 39th Annual Meeting. November 4-9, 2018.  
-</li>
-<li>
-  <strong>Johnson LK</strong>, Alexander HA, Brown CT. 2018. <a href="https://www.slideshare.net/GigaScience/lisa-johnson-at-icg13-reassembly-quality-evaluation-and-annotation-of-678-microbial-eukaryotic-reference-transcriptomes">Re-assembly, quality evaluation, and annotation of 678 microbial eukaryotic reference transcriptomes</a>. 13th Annual International Conference on Genomics. Shenzhen, China. October 25, 2018. Invited talk, <a href="http://gigasciencejournal.com/blog/microbial-genomics-goldmine/">GigaScience Prize Track Winner</a> 
-</li>
-<li>
-  <strong>Johnson LK</strong> and Whitehead J. 2018. <a href="https://figshare.com/articles/De_novo_assemblies_annotations_and_gene_expression_profiling_of_gill_epithelium_from_16_species_of_Fundulus_killifish_in_response_to_salinity_change_/6827201"><em>De novo</em> assemblies, annotations, and gene expression profiling of gill epithelium from 16 species of Fundulus killifish in response to salinity change.</a> International Conference on the Biology of Fishes. Calgary, Alberta. July 15-19, 2018.
-  </li>
-  <li>
-Word, KR; Duckles, BM; Brooks, PT; <strong>Johnson, LK</strong>; Brown, CT; 2018. <a href="http://www.sicb.org/meetings/2018/schedule/abstractdetails.php?id=658">Perspectives from an intensive bioinformatics training workshop with a heterogeneous learner population: success takes many different forms</a>. Society for Integrative and Comparative Biology Annual Meeting, San Francisco, CA. January 3-7, 2018.
-</li>
-<li>
-<strong>Cohen L</strong>, Alexander H, Brown CT. 2017. <a href="https://www.sgmeet.com/aslo/honolulu2017/viewabstract.asp?abstractid=29893">Reassembling 600+ marine transcriptomes: automated pipeline developmetn and evaluation</a>. Aquatic Sciences Meeting, Association for the Sciences of Limnology and Oceanography, Honolulu, HI. Feb 26-March 3, 2017.
-</li>
-<li>
-<strong>Cohen L</strong>, González Angel AM, Edge S. 2013. Molecular responses of coral larvae and sponges to environmental stresses. <a href="http://www.youtube.com/watch?v=XCKkDSCtGFc&amp;feature=share&amp;list=TLI6Hh4VKsSKBrPEfF01PDGUedfFZTRbCX">Florida Specialty License Plate-Funded Research Symposium, Harbor Branch Oceanographic Institute, Fort Pierce, FL. May 16, 2013</a>.
-</li>
-<li>
-González Angel AM, Edge SE, <strong>Cohen LJ</strong>, Mason B. 2013. <em>Porites astreoides</em> larval response to acute hyposalinity stress. 42nd Benthic Ecology Meeting, Savannah, GA. March 20-24, 2012.
-</li>
-<li>
-Voss J, Edge S, <strong>Cohen L</strong>, Fahsbender E, Williams M, Harrison N. 2012. Oil, Dispersant, and Disease: Impacts and Interactions on Corals in the Florida Keys. 41st Benthic Ecology Meeting, Norfolk, VA. Mar 23, 2012.
-</li>
-<li>
-Voss J, Beal J, Edge S, <strong>Cohen L</strong>, Hanisak, D. 2012. Estuarine Impacts on St. Lucie Reef: Determining the Effects of Changing Resource Management on Florida’s Northernmost Coral Reef. Indian River Lagoon Symposium, Harbor Branch Oceanographic Institute at Florida Atlantic University. Feb 9, 2012.
-</li>
-<li>
-Voss J, Edge S, <strong>Cohen L</strong>, Fahsbender E, Williams M, Harrison N. 2011. Oil, Dispersant, and Disease: Impacts and Interactions on Corals in the Florida Keys. Coastal And Estuarine Research Federation Meeting, Daytona Beach, FL. Nov 7, 2011.
-</li>
-<li>
-Beal J, Voss J, Edge S, <strong>Cohen L</strong>. 2011. Living on the ledge: assessment of coral stressors on St. Lucie Reef, Florida. 21st Biennial Conference of the Coastal and Estuarine Research Federation. November 6-10, 2011. Daytona Beach, FL.
-</li>
-<li>
-<strong>Cohen LJ</strong>, Herren LW, Virgilio MT. 2010. Restoring fringing mangrove habitat in the Indian River Lagoon. Florida Academy of Sciences Annual Meeting, Indian River State College, Ft. Pierce, FL. March 19-20, 2010.
-</li>
-<li>
-Virgilio MT, <strong>Cohen LJ</strong>, Herren LW. 2010. Using historic aerial photographs and GIS as management tools for establishing baselines and setting goals for future shoreline restoration in the Indian River Lagoon. Florida Academy of Sciences Annual Meeting, Indian River State College, Ft. Pierce, FL. March 19-20, 2010.
-</li>
-<li>
-Minton D, Smith G, Filmed C, Tafileichig A, <strong>Johnson L</strong>, and Molina M. 2008. Improvement of coral dredging management to minimize environmental impacts in Yap State, Federated States of Micronesia. 11th Annual International Coral Reef Symposium, West Palm Beach, FL. July 7-11, 2008.
-</li>
-<li>
-<strong>Johnson LK</strong> and Kinsey ST. 2004. Effects of muscle fiber size on post-contractile lactate recovery in the blue crab, <em>Callinectes sapidus</em>. Society for Integrative and Comparative Biology Annual Meeting, New Orleans, LA. January 5-9, 2004. <a href="http://www.sicb.org/newsletters/nl04-2004/dcpb.php3#dcpbprogramofficer">1st Place Student Poster Award</a>
-</li>
-<li>
-<strong>Johnson LK</strong>, Cutson JJ, Nicol CJ, Gonzalez FJ, Gavrilova O, Reitman ML. 2001. Effects of rosiglitazone on A-ZIP/F-1 mice with liver-specific deletion of PPAR-gamma gene. Summer Student Poster Day, National Institutes of Health, Bethesda, MD.
-</li>
-<li>
-<strong>Johnson LK</strong>, Gavrilova O, Reitman ML. 2000. Effects of surgical transplantation of brown adipose tissue on the metabolism of lipoatrophic AZIP/F-1 mice. Summer Student Poster Day, National Institutes of Health, Bethesda, MD.
-</li>
-<li>
-<strong>Johnson LK</strong>, Everett CA, Chumakov MK, Gavrilova O, Reitman ML. 1999. Effects of diet on metabolism in lipoatrophic A-ZIP/F-1 mice. Summer Student Poster Day, National Institutes of Health.
-</li>
-<li>
-Tatham TA, <strong>Johnson LK</strong>, Acuna AS. 1998. Symmetrical generalization of the discriminative stimulus effects of toluene and ketamine suggests mediation by NMDA receptors. Society for Neuroscience Annual Meeting, San Diego, CA.
-</li>
-</div>
+      <div class="pub">
+        <div class="tag">2018</div>
+        <div>
+          <h3>Re-assembly, quality evaluation, and annotation of 678 microbial eukaryotic reference transcriptomes</h3>
+          <p class="venue"><em>GigaScience</em>, 8(4): giy158 — <strong>Johnson LK</strong>, Alexander H, Brown CT.</p>
+          <div class="badges">
+            <span class="badge">Prize track winner</span>
+          </div>
+          <a class="link" href="https://doi.org/10.1093/gigascience/giy158">Read the paper →</a>
+          <a class="link" href="http://gigasciencejournal.com/blog/microbial-genomics-goldmine/">Coverage →</a>
+          <a class="link" href="http://gigasciencejournal.com/blog/icg-prize-winner-lisa-johnson-qa/">Q&amp;A →</a>
+        </div>
+      </div>
 
-<html>
+      <div class="pub">
+        <div class="tag">2018</div>
+        <div>
+          <h3>Keeping it light: (re)analyzing community-wide datasets without major infrastructure</h3>
+          <p class="venue"><em>GigaScience</em>, 8(2): giy159 — Alexander H, <strong>Johnson LK</strong>, Brown CT.</p>
+          <a class="link" href="https://doi.org/10.1093/gigascience/giy159">Read the paper →</a>
+        </div>
+      </div>
 
-<head>
-<title>footer</title>
-</head>
+      <div class="pub">
+        <div class="tag">2017</div>
+        <div>
+          <h3>khmer release v2.1: software for biological sequence analysis</h3>
+          <p class="venue"><em>Journal of Open Source Software</em>, 2(15), 272 — Standage D, Aliyari A, Cohen LJ, Crusoe MR, Head T, Irber L, Joslin SEK, Kingsley NB, Murray KD, Neches R, Scott C, Shean R, Steinbiss S, Sydney C, Brown CT.</p>
+          <a class="link" href="http://joss.theoj.org/papers/14540a3b572265f63247f7d8982ea6e2">Read the paper →</a>
+        </div>
+      </div>
 
-<body>
+      <div class="pub">
+        <div class="tag">2016</div>
+        <div>
+          <h3>Parallel Pbx-dependent pathways govern the coalescence and fate of motor columns</h3>
+          <p class="venue"><em>Neuron</em>, 91(5): 1005–1020 — Hanley O, Zewdu R, <strong>Cohen L</strong>, Jung H, Lacombe J, Lee D, Philippidou P, Selleri L, Dasen J.</p>
+          <a class="link" href="https://www.cell.com/neuron/fulltext/S0896-6273(16)30459-7">Read the paper →</a>
+        </div>
+      </div>
 
-<p>Copyright &copy; 2018 Lisa K. Johnson</p>
+      <div class="pub">
+        <div class="tag">2016</div>
+        <div>
+          <h3>Molecular mechanisms of malignant transformation by low dose cadmium in normal human bronchial epithelial cells</h3>
+          <p class="venue"><em>PLOS One</em>, 11(5): e0155002 — Cartularo L, Kluz T, <strong>Cohen L</strong>, Shen SS, Costa M.</p>
+          <a class="link" href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155002">Read the paper →</a>
+        </div>
+      </div>
 
-</body>
-</html>
+      <div class="pub">
+        <div class="tag">2015</div>
+        <div>
+          <h3>Isolation and characterization of ESC-derived cardiac Purkinje cells</h3>
+          <p class="venue"><em>Stem Cells</em> — Maass K, Shekar A, Lu J, Kang G, See F, Kim E, Delgado C, Shen S, <strong>Cohen L</strong>, Fishman G.</p>
+          <a class="link" href="http://onlinelibrary.wiley.com/doi/10.1002/stem.1921/abstract">Read the paper →</a>
+        </div>
+      </div>
 
+      <div class="pub">
+        <div class="tag">2015</div>
+        <div>
+          <h3>Uncovering "herbal probiotics" in Juzen-taiho-to, an immune-boosting herbal formulation</h3>
+          <p class="venue"><em>Bioorganic &amp; Medicinal Chemistry Letters</em> — Montenegro D, Kalpana K, Chrissian C, Sharma A, Takaoka A, Iacovidou M, Soll C, Aminova O, Heguy A, <strong>Cohen L</strong>, Shen S, Kawamura A.</p>
+          <a class="link" href="http://www.sciencedirect.com/science/article/pii/S0960894X14013444">Read the paper →</a>
+        </div>
+      </div>
 
+      <div class="pub">
+        <div class="tag">2004</div>
+        <div>
+          <h3>Metabolic influences of fiber size in aerobic and anaerobic locomotor muscles of the blue crab, <em>Callinectes sapidus</em></h3>
+          <p class="venue"><em>Journal of Experimental Biology</em>, 207: 4045–4056 — <strong>Johnson LK</strong>, Dillaman RM, Gay DM, Blum JE, Kinsey ST.</p>
+          <a class="link" href="http://jeb.biologists.org/content/207/23/4045.long">Read the paper →</a>
+        </div>
+      </div>
 
-</div>
+      <div class="pub">
+        <div class="tag">2003</div>
+        <div>
+          <h3>Liver peroxisome proliferator-activated receptor-gamma contributes to hepatic steatosis, triglyceride clearance, and regulation of body fat mass</h3>
+          <p class="venue"><em>Journal of Biological Chemistry</em>, 278(36): 34268–34276 — Gavrilova O, Haluzik M, Matsusue K, Cutson JJ, <strong>Johnson L</strong>, Dietz KR, Nicol CJ, Vinson C, Gonzalez FJ, Reitman ML.</p>
+          <a class="link" href="http://www.jbc.org/content/278/36/34268.long">Read the paper →</a>
+        </div>
+      </div>
 
-<script>
+    </div>
+  </section>
 
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
+  <!-- ================= BOOK CHAPTER ================= -->
+  <section id="chapter" style="margin-top:56px;">
+    <h2 class="section-title">Book chapter</h2>
+    <p class="section-count">1 chapter</p>
+    <div class="pub-list">
+      <div class="pub">
+        <div class="tag">Ch. 9</div>
+        <div>
+          <h3>De novo Transcriptome Assembly</h3>
+          <p class="venue">In <em>Next Generation DNA Sequencing Informatics</em>, 2nd Edition, ed. Stuart Brown. Cold Spring Harbor Laboratory Press, 2015 — <strong>Cohen L</strong>, Efstathiadis E, Shen S.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ================= PRESENTATIONS ================= -->
+  <section id="talks" style="margin-top:56px;">
+    <h2 class="section-title">Presentations</h2>
+    <p class="section-count">19 talks &amp; posters</p>
 
-</script>
+    <div class="talk-list">
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+      <div class="talk">
+        <div class="tag">2018</div>
+        <p><strong>Johnson LK</strong>, Brennan R, Brown CT, Whitehead J. De novo transcriptome assemblies and transcriptional profiling of 16 <em>Fundulus</em> killifish species in response to environmental challenge. Society of Environmental Toxicology and Chemistry, North America 39th Annual Meeting, Nov 4–9, 2018.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2018</div>
+        <p><strong>Johnson LK</strong>, Alexander HA, Brown CT. Re-assembly, quality evaluation, and annotation of 678 microbial eukaryotic reference transcriptomes. 13th Annual International Conference on Genomics, Shenzhen, China, Oct 25, 2018. Invited talk.
+        <span class="badge">Prize track winner</span><br>
+        <a class="link" href="https://www.slideshare.net/GigaScience/lisa-johnson-at-icg13-reassembly-quality-evaluation-and-annotation-of-678-microbial-eukaryotic-reference-transcriptomes">Slides →</a></p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2018</div>
+        <p><strong>Johnson LK</strong>, Whitehead J. De novo assemblies, annotations, and gene expression profiling of gill epithelium from 16 species of <em>Fundulus</em> killifish in response to salinity change. International Conference on the Biology of Fishes, Calgary, Alberta, Jul 15–19, 2018.<br>
+        <a class="link" href="https://figshare.com/articles/De_novo_assemblies_annotations_and_gene_expression_profiling_of_gill_epithelium_from_16_species_of_Fundulus_killifish_in_response_to_salinity_change_/6827201">Figshare →</a></p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2018</div>
+        <p>Word KR, Duckles BM, Brooks PT, <strong>Johnson LK</strong>, Brown CT. Perspectives from an intensive bioinformatics training workshop with a heterogeneous learner population: success takes many different forms. Society for Integrative and Comparative Biology Annual Meeting, San Francisco, CA, Jan 3–7, 2018.<br>
+        <a class="link" href="http://www.sicb.org/meetings/2018/schedule/abstractdetails.php?id=658">Abstract →</a></p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2017</div>
+        <p><strong>Cohen L</strong>, Alexander H, Brown CT. Reassembling 600+ marine transcriptomes: automated pipeline development and evaluation. Aquatic Sciences Meeting, ASLO, Honolulu, HI, Feb 26–Mar 3, 2017.<br>
+        <a class="link" href="https://www.sgmeet.com/aslo/honolulu2017/viewabstract.asp?abstractid=29893">Abstract →</a></p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2013</div>
+        <p><strong>Cohen L</strong>, González Angel AM, Edge S. Molecular responses of coral larvae and sponges to environmental stresses. Florida Specialty License Plate-Funded Research Symposium, Harbor Branch Oceanographic Institute, Fort Pierce, FL, May 16, 2013.<br>
+        <a class="link" href="http://www.youtube.com/watch?v=XCKkDSCtGFc&feature=share&list=TLI6Hh4VKsSKBrPEfF01PDGUedfFZTRbCX">Video →</a></p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2012</div>
+        <p>González Angel AM, Edge SE, <strong>Cohen LJ</strong>, Mason B. <em>Porites astreoides</em> larval response to acute hyposalinity stress. 42nd Benthic Ecology Meeting, Savannah, GA, Mar 20–24, 2012.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2012</div>
+        <p>Voss J, Edge S, <strong>Cohen L</strong>, Fahsbender E, Williams M, Harrison N. Oil, dispersant, and disease: impacts and interactions on corals in the Florida Keys. 41st Benthic Ecology Meeting, Norfolk, VA, Mar 23, 2012.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2012</div>
+        <p>Voss J, Beal J, Edge S, <strong>Cohen L</strong>, Hanisak D. Estuarine impacts on St. Lucie Reef: determining the effects of changing resource management on Florida's northernmost coral reef. Indian River Lagoon Symposium, Harbor Branch Oceanographic Institute at FAU, Feb 9, 2012.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2011</div>
+        <p>Voss J, Edge S, <strong>Cohen L</strong>, Fahsbender E, Williams M, Harrison N. Oil, dispersant, and disease: impacts and interactions on corals in the Florida Keys. Coastal and Estuarine Research Federation Meeting, Daytona Beach, FL, Nov 7, 2011.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2011</div>
+        <p>Beal J, Voss J, Edge S, <strong>Cohen L</strong>. Living on the ledge: assessment of coral stressors on St. Lucie Reef, Florida. 21st Biennial Conference of the Coastal and Estuarine Research Federation, Nov 6–10, 2011, Daytona Beach, FL.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2010</div>
+        <p><strong>Cohen LJ</strong>, Herren LW, Virgilio MT. Restoring fringing mangrove habitat in the Indian River Lagoon. Florida Academy of Sciences Annual Meeting, Indian River State College, Ft. Pierce, FL, Mar 19–20, 2010.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2010</div>
+        <p>Virgilio MT, <strong>Cohen LJ</strong>, Herren LW. Using historic aerial photographs and GIS as management tools for establishing baselines and setting goals for future shoreline restoration in the Indian River Lagoon. Florida Academy of Sciences Annual Meeting, Indian River State College, Ft. Pierce, FL, Mar 19–20, 2010.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2008</div>
+        <p>Minton D, Smith G, Filmed C, Tafileichig A, <strong>Johnson L</strong>, Molina M. Improvement of coral dredging management to minimize environmental impacts in Yap State, Federated States of Micronesia. 11th Annual International Coral Reef Symposium, West Palm Beach, FL, Jul 7–11, 2008.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2004</div>
+        <p><strong>Johnson LK</strong>, Kinsey ST. Effects of muscle fiber size on post-contractile lactate recovery in the blue crab, <em>Callinectes sapidus</em>. Society for Integrative and Comparative Biology Annual Meeting, New Orleans, LA, Jan 5–9, 2004.
+        <span class="badge">1st place poster</span></p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2001</div>
+        <p><strong>Johnson LK</strong>, Cutson JJ, Nicol CJ, Gonzalez FJ, Gavrilova O, Reitman ML. Effects of rosiglitazone on A-ZIP/F-1 mice with liver-specific deletion of PPAR-gamma gene. Summer Student Poster Day, National Institutes of Health, Bethesda, MD, 2001.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">2000</div>
+        <p><strong>Johnson LK</strong>, Gavrilova O, Reitman ML. Effects of surgical transplantation of brown adipose tissue on the metabolism of lipoatrophic AZIP/F-1 mice. Summer Student Poster Day, National Institutes of Health, Bethesda, MD, 2000.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">1999</div>
+        <p><strong>Johnson LK</strong>, Everett CA, Chumakov MK, Gavrilova O, Reitman ML. Effects of diet on metabolism in lipoatrophic A-ZIP/F-1 mice. Summer Student Poster Day, National Institutes of Health, 1999.</p>
+      </div>
+
+      <div class="talk">
+        <div class="tag">1998</div>
+        <p>Tatham TA, <strong>Johnson LK</strong>, Acuna AS. Symmetrical generalization of the discriminative stimulus effects of toluene and ketamine suggests mediation by NMDA receptors. Society for Neuroscience Annual Meeting, San Diego, CA, 1998.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>Copyright © 2026 Lisa K. Johnson</span>
+  <span><a href="index.html">← Back to home</a></span>
+</footer>
 
 </body>
 </html>
